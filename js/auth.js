@@ -54,14 +54,13 @@ function login() {
   // Check if not signup 
   if (lemail === "" || lpassword === "") {
     alert("Please Signup  first!");
-    return; // stop function here
+    return;
   }
 
   signInWithEmailAndPassword(auth, lemail, lpassword)
     .then((userCredential) => {
       const user = userCredential.user;
       alert("Login successful! Welcome back ");
-        window.location = "index.html"; // redirect to index page //
       console.log("User logged in:", user);
         text.innerText = user.lemail;
     text.style.color = "green";
@@ -75,7 +74,7 @@ function logout() {
   signOut(auth)
     .then(() => {
       alert("Logged out successfully!");
-      window.location = "login.html"; // redirect to login
+      window.location = "index.html"; // redirect to index page
     })
     .catch((error) => {
       alert(error.message);

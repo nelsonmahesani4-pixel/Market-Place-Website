@@ -236,6 +236,35 @@
             background: #5d74f5;
             color: white;
         }
+/* Cart Button*/
+.cartBtn{
+            background:#19a427;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .cartBtn:hover {
+            background: #04590c;
+            color: white;
+        }
+        
+        /* Clear Cart Button */
+            .clrBtn{
+                background:#e1172f;
+                color: white;
+                padding: 10px 20px;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+            .clrBtn:hover {
+                background: #c0392b;
+                color: rgb(240, 233, 233);
+            }
 
         /* Footer */
         footer {
@@ -342,7 +371,7 @@
             <li><a href="about.html">About</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="add-product.html">Add Product</a></li>
-            <li id="cartBtnLi"><a href="add-product.html">Add to Cart</a></li>
+            <li id="cartBtnLi"><a href="signup.html">Add to Cart</a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">
             <span></span>
@@ -426,28 +455,31 @@
                 <div class="product-card">
                     <img src="images/image.png" alt="Product 1">
                     <div class="info">
-                        <h3>Product One</h3>
-                        <p>Description of product one.</p>
+                        <h3>Gift Boxes</h3>
+                        <p> Wrapped boxes with ribbons are arranged near the cart, suggesting holiday sales, promotions, or gifting occasions.</p>
                         <p class="price">$19.99</p>
-                        <button class="btn" id="cartBtn">Add to Cart</button>
+                        <button class="cartBtn" id="cartBtn">Add to Cart</button>
+                        <button class="clrBtn" id="clrCart">Clear Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
                     <img src="images/image copy.png" alt="Product 2">
                     <div class="info">
-                        <h3>Product Two</h3>
-                        <p>Description of product two.</p>
+                        <h3>BRAND Mockup</h3>
+                        <p>cosmetic bottle mockup with a black pump dispenser, suitable for lotions or serums. </p>
                         <p class="price">$29.99</p>
-                        <button class="btn" id="cartBtn">Add to Cart</button>
+                        <button class="cartBtn" id="cartBtn2">Add to Cart</button>
+                          <button class="clrBtn" id="clrCart2">Clear Cart</button>
                     </div>
                 </div>
                 <div class="product-card">
                     <img src="images/image copy 2.png" alt="Product 3">
                     <div class="info">
-                        <h3>Product Three</h3>
-                        <p>Description of product three.</p>
+                        <h3>Shampoo</h3>
+                        <p>Get this image on: Rawpixel | Licence details    Creator: | Credit: rawpixel.com / RoungroatCopyright: 2022 Rawpixel Ltd.</p>
                         <p class="price">$39.99</p>
-                        <button class="btn" id="cartBtn">Add to Cart</button>
+                        <button class="cartBtn" id="cartBtn3">Add to Cart</button>
+                          <button class="clrBtn" id="clrCart3">Clear Cart</button>
                     </div>
                 </div>
             </div>
