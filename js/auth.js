@@ -37,6 +37,7 @@ function signup() {
     .then((userCredential) => {
       const user = userCredential.user;
       alert("Signup successful! Welcome ");
+      window.location = "login.html"; // redirect to index page //
       console.log("User signed up:", user);
         text.innerText = user.semail;
     text.style.color = "green";
@@ -60,6 +61,7 @@ function login() {
     .then((userCredential) => {
       const user = userCredential.user;
       alert("Login successful! Welcome back ");
+        window.location = "index.html"; // redirect to index page //
       console.log("User logged in:", user);
         text.innerText = user.lemail;
     text.style.color = "green";
