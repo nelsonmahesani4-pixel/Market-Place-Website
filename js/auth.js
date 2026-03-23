@@ -88,6 +88,10 @@ function google() {
     const token = credential.accessToken;
     const user = result.user;
     console.log("User", user);
+    alert("Login successful! Welcome back " + user.email);
+    text.innerText = user.email;
+    text.style.color = "green";
+    window.location = "index.html"; // redirect to index page
   }).catch((error) => {
     const errorCode = error.code;
     const errorMessage = error.message;
