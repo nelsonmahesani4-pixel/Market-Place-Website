@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    background: radial-gradient(circle at 20% 10%, #9dd7ff, #bba5ff 45%, #e5d9ff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 380px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow: 0 20px 40px rgba(35, 40, 80, 0.2);
+    overflow: hidden;
+    border: 1px solid rgba(120, 125, 190, 0.25);
+}
+
+.tabs {
+    display: flex;
+    background: #eef2ff;
+}
+
+.tab-btn {
+    flex: 1;
+    border: 0;
+    background: transparent;
+    color: #5566a8;
+    font-weight: 600;
+    padding: 14px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    font-size: 16px;
+}
+
+.tab-btn.active {
+    color: #fff;
+    background: linear-gradient(90deg, #3a5dee, #6f7df6);
+    box-shadow: inset 0 -4px 0 #1f3ed5;
+}
+
+.card-body {
+    padding: 28px 24px 26px;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 18px;
+    color: #223;
+    font-size: 26px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 14px;
+    margin: 10px 0;
+    border: 1px solid #d7dbf4;
+    border-radius: 8px;
+    font-size: 15px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #5d74f5;
+    box-shadow: 0 0 0 3px rgba(93, 116, 245, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(90deg, #3d5be8, #6279f8);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+button:hover {
+    opacity: 0.92;
+}
+
+.switch {
+    margin-top: 12px;
+    font-size: 14px;
+    color: #4b5d8f;
+    text-align: center;
+}
+
+.switch span {
+    color: #3458f7;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+#googleBtn {
+    margin-top: 10px;
+    background: #fff;
+    color: #444;
+    border: 1px solid #ccd3f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+#googleBtn:hover {
+    background: #f7f8ff;
+}
+
+.form { display: none; }
+.form.active { display: block; }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="tabs">
+        <button class="tab-btn active" data-form="loginForm">Login</button>
+        <button class="tab-btn" data-form="signupForm">Signup</button>
+    </div>
+
+    <div class="card-body">
+        <div id="loginForm" class="form active">
+            <h2>Login</h2>
+            <input type="email" id="lemail" placeholder="Email">
+            <input type="password" id="lpassword" placeholder="Password">
+            <button id="signinBtn">Sign In</button>
+            <p class="switch">Don't have an account? <span data-form="signupForm">Signup now</span></p>
+        </div>
+
+        <div id="signupForm" class="form">
+            <h2>Create Account</h2>
+            <input type="email" id="semail" placeholder="Email">
+            <input type="password" id="spassword" placeholder="Password">
+            <button id="signupBtn">Sign Up</button>
+            <p class="switch">Already have an account? <span data-form="loginForm">Login</span></p>
+        </div>
+
+        <button id="googleBtn">
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" width="20" alt="Google">
+            Continue with Google
+        </button>
+        <p id="text"></p>
+    </div>
+</div>
+<script>
+    
+const tabs = document.querySelectorAll('.tab-btn');
+const forms = document.querySelectorAll('.form');
+const switchLinks = document.querySelectorAll('.switch span');
+
+function setActiveForm(formId) {
+    forms.forEach(f => f.id === formId ? f.classList.add('active') : f.classList.remove('active'));
+    tabs.forEach(t => t.dataset.form === formId ? t.classList.add('active') : t.classList.remove('active'));
+}
+
+tabs.forEach(tab => tab.addEventListener('click', () => setActiveForm(tab.dataset.form)));
+switchLinks.forEach(link => link.addEventListener('click', () => setActiveForm(link.dataset.form)));
+
+</script>
+ 
+
+<script src="firebase.js" type="module"></script>
+<script src="js/app.js" type="module"></script>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<style>
+    body {
+  font-family: Arial;
+  background: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.card {
+  background: #fff;
+  padding: 20px;
+  width: 300px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: pink;
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 12px;
+}
+
+.product-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.category {
+  color: blue;
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.title {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.price {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cartBtn {
+  border: none;
+  background: none;
+  cursor: pointer;
+  background-color: blue;
+}
+
+.buyBtn {
+  background: blue;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+</style>
+<body>
+
+    <div class="container">
+
+  <div class="card">
+    <span class="badge">-59%</span>
+
+    <img src="https://via.placeholder.com/300x180" class="product-img">
+
+    <p class="category">Audio Devices</p>
+    <h3 class="title">Nokia Essential Wireless Headphones</h3>
+
+    <div class="price">₦600,000</div>
+
+    <div class="buttons">
+      <button class="cartBtn">Add to Cart</button>
+      <button class="buyBtn">Buy Now</button>
+    </div>
+  </div>
+
+</div>
+  
+
+</body>
+<script src=" firebase.js" type="module"></script>
+<script src="js/app.js" type="module"></script>
+</html>
