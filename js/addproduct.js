@@ -30,6 +30,7 @@ console.log("Product added successfully!");
     console.error("Error:", error);
   }
 });
+
 // navar
 window.addEventListener('scroll', function() {
     const navbar = document.getElementById('navbar');
@@ -39,3 +40,23 @@ window.addEventListener('scroll', function() {
         navbar.classList.remove('fixed');
     }
 });
+
+const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  if (menuToggle && navLinks) {
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menuToggle.classList.toggle('open'); // optional for animation
+    });
+
+     
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.classList.remove('open');
+      });
+    });
+  } else {
+    console.warn('menu toggle or nav-links element not found');
+  }

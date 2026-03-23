@@ -93,6 +93,48 @@
                 display: flex;
             }
         }
+        /* footer*/
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        footer .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        footer h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .copyright {
+            margin-top: 30px;
+            font-size: 14px;
+        }
 
     </style>
 <body>
@@ -147,6 +189,31 @@
             <button type="submit">Add Product</button>
         </div>
     </form>
+
+    <footer>
+        <div class="footer-content">
+            <div>
+                <h3>Marketplace</h3>
+                <p>Connecting buyers and sellers worldwide.</p>
+            </div>
+            <div>
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="add-product.html">Add Product</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact</h3>
+                <p>Email: info@marketplace.com</p>
+                <p>Phone: +1 234 567 890</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Marketplace. All rights reserved.</p>
+        </div>
+    </footer>
 
     <script src="firebase.js" type="module"></script>
     <script src="js/app.js" type="module"></script>

@@ -53,15 +53,32 @@
         }
 
         .navbar .nav-links a {
+            position: relative;
             color: white;
             text-decoration: none;
             font-size: 16px;
             transition: color 0.3s ease;
         }
 
-        .navbar .nav-links a:hover {
-            color: #e0e0e0;
+        .navbar .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #8B4513; /* Brown color */
+            transition: width 0.3s ease;
         }
+
+        .navbar .nav-links a:hover {
+            color: #261e1e;
+        }
+
+        .navbar .nav-links a:hover::after {
+            width: 100%;
+        }
+        
 
         .navbar .menu-toggle {
             display: none;
@@ -250,7 +267,7 @@
             background: #04590c;
             color: white;
         }
-        
+
         /* Clear Cart Button */
             .clrBtn{
                 background:#e1172f;
@@ -371,7 +388,6 @@
             <li><a href="about.html">About</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="add-product.html">Add Product</a></li>
-            <li id="cartBtnLi"><a href="signup.html">Add to Cart</a></li>
         </ul>
         <div class="menu-toggle" id="menu-toggle">
             <span></span>

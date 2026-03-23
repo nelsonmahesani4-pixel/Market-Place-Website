@@ -25,7 +25,7 @@ if(logoutBtn)logoutBtn.addEventListener("click", logout);
 
  // Continue With Google
       var googleBtn = document.getElementById("googleBtn");
-      googleBtn.addEventListener("click", google);
+      if(googleBtn)googleBtn.addEventListener("click", google);
 
 
 //  Signup function
